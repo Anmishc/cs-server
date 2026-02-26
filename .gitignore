@@ -1,0 +1,11 @@
+# Compiled AMXX plugins (binary) - keep only source .sma
+addons/amxmodx/plugins/*.amxx
+
+# AMXX data vault files (runtime generated)
+addons/amxmodx/data/vault/
+
+# Logs
+*.log
+
+# VS Code local settings
+.vscode/settings.json

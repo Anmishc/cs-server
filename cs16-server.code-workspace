@@ -1,0 +1,120 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "*.sma": "c",
+      "*.amxx": "binary",
+      "*.cfg": "ini",
+      "*.ini": "ini",
+      "*.inc": "c",
+      "**/configs/plugins/*.json": "jsonc",
+      "**/configs/*.json": "jsonc"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false,
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+    "search.exclude": {
+      "**/addons/amxmodx/scripting/include/**": false,
+      "**/addons/amxmodx/plugins/**": true
+    },
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+      "*.sma": "${capture}.amxx"
+    },
+    "workbench.colorTheme": "Default Dark Modern",
+    "editor.wordWrap": "on"
+  },
+  "extensions": {
+    "recommendations": [
+      "uselessidler.sourcepawn-vscode",
+      "ms-vscode.powershell"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": []
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "� [DEV] Deploy ALL",
+        "type": "shell",
+        "command": "powershell -ExecutionPolicy Bypass -File deploy.ps1 -Env dev",
+        "group": { "kind": "build", "isDefault": true },
+        "presentation": { "reveal": "always", "panel": "shared" },
+        "problemMatcher": []
+      },
+      {
+        "label": "🔧 [DEV] Deploy configs only",
+        "type": "shell",
+        "command": "powershell -ExecutionPolicy Bypass -File deploy.ps1 -Env dev -Only configs",
+        "group": "build",
+        "presentation": { "reveal": "always", "panel": "shared" },
+        "problemMatcher": []
+      },
+      {
+        "label": "🔧 [DEV] Deploy plugins only",
+        "type": "shell",
+        "command": "powershell -ExecutionPolicy Bypass -File deploy.ps1 -Env dev -Only plugins",
+        "group": "build",
+        "presentation": { "reveal": "always", "panel": "shared" },
+        "problemMatcher": []
+      },
+      {
+        "label": "🔧 [DEV] Deploy server configs",
+        "type": "shell",
+        "command": "powershell -ExecutionPolicy Bypass -File deploy.ps1 -Env dev -Only server",
+        "group": "build",
+        "presentation": { "reveal": "always", "panel": "shared" },
+        "problemMatcher": []
+      },
+      {
+        "label": "─────────────────────────",
+        "type": "shell",
+        "command": "echo separator",
+        "group": "build",
+        "presentation": { "reveal": "never" },
+        "problemMatcher": []
+      },
+      {
+        "label": "🚀 [PROD] Deploy ALL",
+        "type": "shell",
+        "command": "powershell -ExecutionPolicy Bypass -File deploy.ps1 -Env prod",
+        "group": "build",
+        "presentation": { "reveal": "always", "panel": "shared" },
+        "problemMatcher": []
+      },
+      {
+        "label": "🚀 [PROD] Deploy configs only",
+        "type": "shell",
+        "command": "powershell -ExecutionPolicy Bypass -File deploy.ps1 -Env prod -Only configs",
+        "group": "build",
+        "presentation": { "reveal": "always", "panel": "shared" },
+        "problemMatcher": []
+      },
+      {
+        "label": "🚀 [PROD] Deploy plugins only",
+        "type": "shell",
+        "command": "powershell -ExecutionPolicy Bypass -File deploy.ps1 -Env prod -Only plugins",
+        "group": "build",
+        "presentation": { "reveal": "always", "panel": "shared" },
+        "problemMatcher": []
+      },
+      {
+        "label": "🚀 [PROD] Deploy server configs",
+        "type": "shell",
+        "command": "powershell -ExecutionPolicy Bypass -File deploy.ps1 -Env prod -Only server",
+        "group": "build",
+        "presentation": { "reveal": "always", "panel": "shared" },
+        "problemMatcher": []
+      }
+    ]
+  }
+}

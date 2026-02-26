@@ -1,0 +1,13 @@
+[ru]
+GM_DAY_PLURAL = ^3%i ^4дней
+GM_DAY_NOMINATIVE = ^3%i ^4день
+GM_DAY_SINGULAR = ^3%i ^4дня
+GM_HOUR_PLURAL = ^3%i ^4часов
+GM_HOUR_NOMINATIVE = ^3%i ^4час
+GM_HOUR_SINGULAR = ^3%i ^4часа
+GM_MINUTE_PLURAL = ^3%i ^4минут
+GM_MINUTE_NOMINATIVE = ^3%i ^4минута
+GM_MINUTE_SINGULAR = ^3%i ^4минуты
+GM_SECOND_PLURAL = ^3%i ^4секунд
+GM_SECOND_NOMINATIVE = ^3%i ^4секунда
+GM_SECOND_SINGULAR = ^3%i ^4секунды

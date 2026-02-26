@@ -1,0 +1,737 @@
+{
+	// ВАЖНО: Будьте внимательны при заполнении пунктов, не поддержание синтаксиса ломает работу плагина
+	// ВАЖНО: Файл очень чувствителен, убедитесь что у вас все запятые раставленны правильно (в конце не ставится)
+	// ВАЖНО: Пустые линии запрещены
+	// Инициализация системы
+	"core":
+	{
+		// Команды для ручного открытия меню
+		"commands":
+		[
+			"/vip",
+			"/vipmenu",
+			"vipmenu"
+		],
+		// Режим чтения флагов. 0 - игрок должен иметь хоть 1 флаг из указанных ||| 1 - игрок должен иметь строго все флаги указанные в пунктах
+		"access_mode": 0,
+		// С какого раунда будет активно само VIP меню 
+		"round": 3,
+		// Карты на которых не будет активно само VIP меню
+		"maps":
+		[
+			"$",
+			"aim_",
+			"fy_",
+			"cs_deagle"
+		]
+	},
+	// Раздел экиперовки
+	"equip_manager":
+	{
+		// С какого раунда будут доступны бонусы при спавне (см. ниже)
+		// Дигла тут нет, вы сможете выставить любое оружие которое получит игрок с доступом в разделе Кастомный оружий
+		"equip_round": 1,
+		// Выдавать бонусы только при первом спавне игрока в этом раунде
+		// Это может быть полезно, если у вас игроки могут несколько раз за раунд возрождатся сторонними плагинами
+		"equip_only_first_spawn": 1,
+		// Персона с этим флагом получит взрывную гранату (и можно указать количество)
+		"he": "qrst",
+		"he_value": 1,
+		// Персона с этим флагом получит слеповую гранату (и можно указать количество)
+		"flash": "qrst",
+		"flash_value": 2,
+		// Персона с этим флагом получит дымовую гранату (и можно указать количество)
+		"smoke": "qrst",
+		"smoke_value": 1,
+		// Персона с этим флагом получит автопополнение патрон (в момент нового раунда) на всех оружиях
+		"auto_reload": "qrst",
+		// Персона с этим флагом получит броню с каской
+		"kevlar": "qrst",
+		// Персона с этим флагом получит прибор разминирования (ну или КИТЫ)
+		"defuse": "qrst",
+		// Персона с этим флагом получит прибор начного видения (ну или НАЙТВИЖН)
+		"nightvision": "qrst",
+		// Персона с этим флагом получит безсушмный бег (враги не смогут услышать его даже без SHIFT)
+		"silent": "q",
+		// Карты на которых не будет работать этот раздел
+		"maps":
+		[
+			"$",
+			"aim_",
+			"fy_",
+			"cs_deagle"
+		]
+	},
+	// Раздел спец. возможностей
+	"abilities":
+	{
+		// Персона с этим флагом не получит урон от падения
+		"no_fall_dmg": "q",
+		// Персона с этим флагом сможет бегать во время установки/разминирования бомбы
+		"plant_unfreeze": "qr",
+		// Персона с этим флагом не сможет ослепнуть
+		"antiflash": "",
+		// Прыжки
+		"jump":
+		{
+			// Персона с этим флагом получит дополнительные прыжки
+			"jump_access": "q",
+			// Кол-во дополнительных прыжков
+			"jump_count": 1
+		},
+		// Игнорирование урона
+		"hook_damage":
+		{
+			// Персона с этим флагом получит возможность игнорировать входящий урон
+			"hook_damage_access": "q",
+			// Шанс (%) при котором урон проигнорируется
+			"hook_damage_chance": 10
+		},
+		// Дополнительный запас здоровья
+		"bonus_health":
+		{
+			// Персона с этим флагом получит дополнительное здоровье при спавне
+			"bonus_health_access": "qr",
+			// Само дополнительное здоровье
+			"bonus_health_amount": 25
+		},
+		// Умный показ меню. Показывать VIP меню если
+		// a - нет активного оружия
+		// b - умер в прошлом раунде
+		// c - после выбора оружий если еще осталось количество использований
+		"menu_mode": "b",
+		// Персона с этим флагом может брать оружие только в байзоне
+		"only_in_buyzone": "",
+		// Персона с этим флагом может брать оружие только в ограниченное время
+		"expired": "",
+		// То самое время кол-во секунд от начала раунда
+		// Вы можете указать -1.0 и тогда будет использоваться время mp_buytime
+		"expired_time": -1.0,
+		// Максимальное допустимое количество использований меню за раунд
+		// По умолчанию если указать 0 напротив флага, то игрок может использовать меню неограниченное количество раз
+		"max_usage":
+		{
+			// Обратите внимание работает по первому флагу найденному у игрока
+			"q": 5,
+			"r": 3,
+			"s": 1,
+			"t": 1,
+			
+			// Значение по умолчанию если игрок не найден в списке
+			"def": 2
+		},
+		// Автоматическое пополнение патрон при убийстве
+		"instant_reload":
+		{
+			// Персона с этим флагом получит автоматическое пополнение патрон при убийстве
+			"instant_reload_weapons_access": "q",
+			// При убийстве автоматически пополняется обойма у всех оружий (1 - только на то оружие которым убили)
+			"instant_reload_weapons_mode": 1
+		},
+		// Карты на которых не будет работать этот раздел
+		"maps":
+		[
+			"$",
+			"aim_",
+			"fy_",
+			"cs_deagle"
+		]
+	},
+	// Раздел дополнительных бонусов
+	"bonuses":
+	{
+		// Персона с этим флагом получит доступ к дополнительной системе бонусов
+		"bonus_access": "qrst",
+		// Дополнительные фраги
+		"frags": 1,
+		// Получаем бабки за убийство (устанавливается а не добовляется)
+		"killed": 400,
+		// Получаем бабки за установку бомбы
+		"bomb_planted": 300,
+		// Получаем бабки за подрыв бомбы
+		"bomb_explode": 300,
+		// Получаем бабки за разминирование бомбы
+		"bomb_defused": 300,
+		// Получаем бабки за взятие заложника (устанавливается а не добовляется)
+		"hostage_took": 100,
+		// Получаем бабки за спасение заложника (устанавливается а не добовляется)
+		"hostage_rescued": 750,
+		// Получаем бабки за убийство VIP персоны в режиме: Спасти VIP (устанавливается а не добовляется)
+		"vip_killed": 2500,
+		// Получаем бабки за спасение VIP в режиме: Спасти VIP (устанавливается а не добовляется)
+		"vip_rescued_myself": 2500,
+		// Множитель денег (за победу/поражение в раунде)
+		"terminating": 2.0,
+		// Процент скидки в оригинальном магазине на покупку оружий
+		"discount": 30,
+		// Карты на которых не будет работать этот раздел
+		"maps":
+		[
+			"$",
+			"aim_",
+			"fy_",
+			"gg_",
+			"cs_deagle"
+		]
+	},
+	// Раздел вампирки
+	"vampire":
+	{
+		// Персона с этим флагом получит доступ к вампирке
+		"vampire_access": "qrst",
+		// Здоровье за каждого убитого игрока
+		"vampire_health": 10.0,
+		// Здоровье за каждого убитого игрока в голову
+		"vampire_health_hs": 15.0,
+		// Здоровье за каждого убитого игрока с гранаты
+		"vampire_health_nade": 15.0,
+		// Максимальный допустимый запас здоровья
+		"vampire_health_max": 100.0,
+		// Подсвечивать ли экран во врмея вампиризма (слепой игрок учтен!)
+		"vampire_screenfade": 1,
+		// Показывать ли HUD сообщение о том сколько здоровья добавилось игроку
+		"vampire_hud": 1,
+		// Предотвращение мультиубийств (допустим с гранаты можно убить сразу 3-их с авп 2-х.. будет считать как одно)
+		"vampire_prevent_multiply": 1,
+		// Звук который будет проигрыватся при убийстве (оставьте пустым если не нужен)
+		"vampire_sample": "buttons/blip1.wav",
+		// Карты на которых не будет работать этот раздел
+		"maps":
+		[
+			"$",
+			"aim_",
+			"fy_",
+			"cs_deagle"
+		]
+	},
+	// Раздел кастомных оружий
+	// ВАЖНО: Будьте аккуранты и соблюдайте последовательность пунктов
+	// Доступные параметры:
+	// base_name - ОБЯЗАТЕЛЬНЫЙ параметр идентификатор имени оружия [dev-cs.ru/threads/772] (указывайте без weapon_)
+	// access - флаги доступа (можно не указывать если активен пункт free_access)
+	// name - имя оружия для меню (можно не указывать если активен пункт free_access)
+	// v_model - V модель оружия (можно не указывать тогда будет использоваться стандартная)
+	// p_model - P модель оружия (можно не указывать тогда будет использоваться стандартная)
+	// w_model - W модель оружия (можно не указывать тогда будет использоваться стандартная)
+	// stab_distance - Множитель дистанции для ПКМ (можно не указывать, действует только для ножа)
+	// swing_distance - Множитель дистанции для ЛКМ (можно не указывать, действует только для ножа)
+	// stab_damage - Множитель урона для ЛКМ (можно не указывать, действует только для ножа)
+	// swing_damage - Множитель дистанции для ЛКМ (можно не указывать, действует только для ножа)
+	// damage - Множитель урона для стрелкового оружия (можно не указывать)
+	// ammo - Запас патрон для стрелкового оружия (можно не указывать)
+	// bpammo - Запас магазина для стрелкового оружия (можно не указывать)
+	// speed_power - Множитель скорости [у каждого оружия по умолчанию своя скорость] (можно не указывать)
+	// give_type - Тип выдачи [2 - старое оружие исчезнет, 1 - старое оружие выкинется на землю / 0 - добавится в слот] (можно не указывать)
+	// cost - Стоимость оружия (можно не указывать)
+	// round - Ограничитель раундов для оружие [тоесть имеется ввиду через сколко раундов его можно взять вновь] (можно не указывать)
+	// touches - С этим параметром подобрать оружие смогут только игроки с флагами access (можно не указывать)
+	// team - Для какой команды активно данное оружие (можно не указывать)
+	// free_access - Персоны с этим флагом автоматически получат предмет при спавне (можно не указывать)
+	// menu_folder - Раздел секции меню (если не указывать то будет без секции, а просто в главном меню)
+	"custom_weapons":
+	{
+		// Вообще вы можете использовать любое название вместо цифр, главное чтобы оно не повторялось
+		//
+		// Просто как дигл при спавне
+		"1":
+		{
+			"base_name": "deagle",
+			"bpammo": 35,
+			"give_type": 2,
+			"free_access": "qrst"
+		},
+		// Усиленный нож для VIP с повышенным уроном и дальностью даставания
+		"2":
+		{
+			"base_name": "knife",
+			"stab_distance": 2.0,
+			"swing_distance": 2.0,
+			"stab_damage": 2.0,
+			"swing_damage": 2.0,
+			"free_access": "qrst"
+		},
+		"3":
+		{
+			"base_name": "ak47",
+			"access": "qrst",
+			"name": "АК47",
+			"v_model": "models/vipwhitelion/v_wlak47.mdl",
+			"p_model": "models/vipwhitelion/p_wlak47.mdl",
+			"w_model": "models/vipwhitelion/w_wlak47.mdl",
+			"damage": 1.5,
+			"ammo": 40,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Белый лев\""
+		},
+		"4":
+		{
+			"base_name": "m4a1",
+			"access": "qrst",
+			"name": "M4A1",
+			"v_model": "models/vipwhitelion/v_wlm4a1.mdl",
+			"p_model": "models/vipwhitelion/p_wlm4a1.mdl",
+			"w_model": "models/vipwhitelion/w_wlm4a1.mdl",
+			"damage": 1.5,
+			"ammo": 40,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Белый лев\""
+		},
+		"5":
+		{
+			"base_name": "deagle",
+			"access": "qrst",
+			"name": "Deagle",
+			"v_model": "models/vipwhitelion/v_wldeagle.mdl",
+			"p_model": "models/vipwhitelion/p_wldeagle.mdl",
+			"w_model": "models/vipwhitelion/w_wldeagle.mdl",
+			"damage": 1.5,
+			"ammo": 35,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Белый лев\""
+		},
+		"6":
+		{
+			"base_name": "awp",
+			"access": "qrst",
+			"name": "AWP",
+			"v_model": "models/vipwhitelion/v_wlawp.mdl",
+			"p_model": "models/vipwhitelion/p_wlawp.mdl",
+			"w_model": "models/vipwhitelion/w_wlawp.mdl",
+			"damage": 1.5,
+			"ammo": 15,
+			"bpammo": 40,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Белый лев\""
+		},
+		"7":
+		{
+			"base_name": "ak47",
+			"access": "qrst",
+			"name": "АК47",
+			"v_model": "models/vipwildstyle/v_wsak47.mdl",
+			"p_model": "models/vipwildstyle/p_wsak47.mdl",
+			"w_model": "models/vipwildstyle/w_wsak47.mdl",
+			"damage": 1.5,
+			"ammo": 40,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Дикий стиль\""
+		},
+		"8":
+		{
+			"base_name": "m4a1",
+			"access": "qrst",
+			"name": "M4A1",
+			"v_model": "models/vipwildstyle/v_wsm4a1.mdl",
+			"p_model": "models/vipwildstyle/p_wsm4a1.mdl",
+			"w_model": "models/vipwildstyle/w_wsm4a1.mdl",
+			"damage": 1.5,
+			"ammo": 40,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Дикий стиль\""
+		},
+		"9":
+		{
+			"base_name": "deagle",
+			"access": "qrst",
+			"name": "Deagle",
+			"v_model": "models/vipwildstyle/v_wsdeagle.mdl",
+			"p_model": "models/vipwildstyle/p_wsdeagle.mdl",
+			"w_model": "models/vipwildstyle/w_wsdeagle.mdl",
+			"damage": 1.5,
+			"ammo": 35,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Дикий стиль\""
+		},
+		"10":
+		{
+			"base_name": "awp",
+			"access": "qrst",
+			"name": "AWP",
+			"v_model": "models/vipwildstyle/v_wsawp.mdl",
+			"p_model": "models/vipwildstyle/p_wsawp.mdl",
+			"w_model": "models/vipwildstyle/w_wsawp.mdl",
+			"damage": 1.5,
+			"ammo": 15,
+			"bpammo": 40,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Дикий стиль\""
+		},
+		"11":
+		{
+			"base_name": "ak47",
+			"access": "qrst",
+			"name": "АК47",
+			"v_model": "models/vipdarksnake/v_dsak47.mdl",
+			"p_model": "models/vipdarksnake/p_dsak47.mdl",
+			"w_model": "models/vipdarksnake/w_dsak47.mdl",
+			"damage": 1.5,
+			"ammo": 40,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Тёмная змея\""
+
+		},
+		"12":
+		{
+			"base_name": "m4a1",
+			"access": "qrst",
+			"name": "M4A1",
+			"v_model": "models/vipdarksnake/v_dsm4a1.mdl",
+			"p_model": "models/vipdarksnake/p_dsm4a1.mdl",
+			"w_model": "models/vipdarksnake/w_dsm4a1.mdl",
+			"damage": 1.5,
+			"ammo": 40,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Тёмная змея\""
+		},
+		"13":
+		{
+			"base_name": "deagle",
+			"access": "qrst",
+			"name": "Deagle",
+			"v_model": "models/vipdarksnake/v_dsdeagle.mdl",
+			"p_model": "models/vipdarksnake/p_dsdeagle.mdl",
+			"w_model": "models/vipdarksnake/w_dsdeagle.mdl",
+			"damage": 1.5,
+			"ammo": 35,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Тёмная змея\""
+		},
+		"14":
+		{
+			"base_name": "awp",
+			"access": "qrst",
+			"name": "AWP",
+			"v_model": "models/vipdarksnake/v_dsawp.mdl",
+			"p_model": "models/vipdarksnake/p_dsawp.mdl",
+			"w_model": "models/vipdarksnake/w_dsawp.mdl",
+			"damage": 1.5,
+			"ammo": 15,
+			"bpammo": 40,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "VIP: \"Тёмная змея\""
+		},
+		"15":
+		{
+			"base_name": "ak47",
+			"access": "qr",
+			"name": "АК47",
+			"v_model": "models/vipmurder/v_mrdak47.mdl",
+			"p_model": "models/vipmurder/p_mrdak47.mdl",
+			"w_model": "models/vipmurder/w_mrdak47.mdl",
+			"damage": 1.5,
+			"ammo": 40,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "PREMIUM: \"Убийца\""
+
+		},
+		"16":
+		{
+			"base_name": "m4a1",
+			"access": "qr",
+			"name": "M4A1",
+			"v_model": "models/vipmurder/v_mrdm4a1.mdl",
+			"p_model": "models/vipmurder/p_mrdm4a1.mdl",
+			"w_model": "models/vipmurder/w_mrdm4a1.mdl",
+			"damage": 1.5,
+			"ammo": 40,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "PREMIUM: \"Убийца\""
+		},
+		"17":
+		{
+			"base_name": "deagle",
+			"access": "qr",
+			"name": "Deagle",
+			"v_model": "models/vipmurder/v_mrddeagle.mdl",
+			"p_model": "models/vipmurder/p_mrddeagle.mdl",
+			"w_model": "models/vipmurder/w_mrddeagle.mdl",
+			"damage": 1.5,
+			"ammo": 35,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "PREMIUM: \"Убийца\""
+		},
+		"18":
+		{
+			"base_name": "awp",
+			"access": "qr",
+			"name": "AWP",
+			"v_model": "models/vipmurder/v_mrdawp.mdl",
+			"p_model": "models/vipmurder/p_mrdawp.mdl",
+			"w_model": "models/vipmurder/w_mrdawp.mdl",
+			"damage": 1.5,
+			"ammo": 15,
+			"bpammo": 40,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "PREMIUM: \"Убийца\""
+		},
+		"19":
+		{
+			"base_name": "ak47",
+			"access": "qr",
+			"name": "АК47",
+			"v_model": "models/viphyperbeast/v_hbak47.mdl",
+			"p_model": "models/viphyperbeast/p_hpak47.mdl",
+			"w_model": "models/viphyperbeast/w_hpak47.mdl",
+			"damage": 1.5,
+			"ammo": 40,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "PREMIUM: \"Гиперзверь\""
+
+		},
+		"20":
+		{
+			"base_name": "m4a1",
+			"access": "qr",
+			"name": "M4A1",
+			"v_model": "models/viphyperbeast/v_hbm4a1.mdl",
+			"p_model": "models/viphyperbeast/p_hbm4a1.mdl",
+			"w_model": "models/viphyperbeast/w_hbm4a1.mdl",
+			"damage": 1.5,
+			"ammo": 40,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "PREMIUM: \"Гиперзверь\""
+		},
+		"21":
+		{
+			"base_name": "deagle",
+			"access": "qr",
+			"name": "Deagle",
+			"v_model": "models/viphyperbeast/v_hbdeagle.mdl",
+			"p_model": "models/viphyperbeast/p_hbdeagle.mdl",
+			"w_model": "models/viphyperbeast/w_hbdeagle.mdl",
+			"damage": 1.5,
+			"ammo": 35,
+			"bpammo": 120,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "PREMIUM: \"Гиперзверь\""
+		},
+		"22":
+		{
+			"base_name": "awp",
+			"access": "qr",
+			"name": "AWP",
+			"v_model": "models/viphyperbeast/v_hbawp.mdl",
+			"p_model": "models/viphyperbeast/p_hbawp.mdl",
+			"w_model": "models/viphyperbeast/w_hbawp.mdl",
+			"damage": 1.5,
+			"ammo": 15,
+			"bpammo": 40,
+			"speed_power": 1.15,
+			"give_type": 1,
+			"round": 2,
+			"touches": 1,
+			"menu_folder": "PREMIUM: \"Гиперзверь\""
+		},
+		"23":
+        {
+            "base_name": "ak47",
+            "access": "qr",
+            "name": "АК47",
+        "v_model": "models/premiumrageseries/v_rsak47.mdl",
+        "p_model": "models/premiumrageseries/p_rsak47.mdl",
+        "w_model": "models/premiumrageseries/w_rsak47.mdl",
+        "damage": 1.5,
+        "ammo": 40,
+        "bpammo": 120,
+        "speed_power": 1.15,
+        "give_type": 1,
+        "round": 2,
+        "touches": 1,
+      "menu_folder": "PREMIUM: \"Рэйдж\""
+        },
+       "24":
+      {
+        "base_name": "m4a1",
+        "access": "qr",
+        "name": "M4A1",
+        "v_model": "models/premiumrageseries/v_rsm4a1.mdl",
+        "p_model": "models/premiumrageseries/p_rsm4a1.mdl",
+        "w_model": "models/premiumrageseries/w_rsm4a1.mdl",
+        "damage": 1.5,
+        "ammo": 40,
+        "bpammo": 120,
+        "speed_power": 1.15,
+        "give_type": 1,
+        "round": 2,
+        "touches": 1,
+      "menu_folder": "PREMIUM: \"Рэйдж\""
+        },
+      "25":
+      {
+        "base_name": "deagle",
+        "access": "qr",
+        "name": "Deagle",
+        "v_model": "models/premiumrageseries/v_rsdeagle.mdl",
+        "p_model": "models/premiumrageseries/p_rsdeagle.mdl",
+        "w_model": "models/premiumrageseries/w_rsdeagle.mdl",
+        "damage": 1.5,
+        "ammo": 35,
+        "bpammo": 120,
+        "speed_power": 1.15,
+        "give_type": 1,
+        "round": 2,
+        "touches": 1,
+      "menu_folder": "PREMIUM: \"Рэйдж\""
+      },
+       "26":
+         {
+      "base_name": "awp",
+        "access": "qr",
+        "name": "AWP",
+        "v_model": "models/premiumrageseries/v_rsawp.mdl",
+        "p_model": "models/premiumrageseries/p_rsawp.mdl",
+        "w_model": "models/premiumrageseries/w_rsawp.mdl",
+        "damage": 1.5,
+        "ammo": 15,
+        "bpammo": 40,
+        "speed_power": 1.15,
+        "give_type": 1,
+        "round": 2,
+        "touches": 1,
+      "menu_folder": "PREMIUM: \"Рэйдж\""
+		},
+		"27":
+        {
+            "base_name": "ak47",
+            "access": "qr",
+            "name": "АК47",
+        "v_model": "models/platinumstickers/v_ak47.mdl",
+        "damage": 1.5,
+        "ammo": 40,
+        "bpammo": 120,
+        "speed_power": 1.15,
+        "give_type": 1,
+        "round": 2,
+        "touches": 1,
+      "menu_folder": "PLATINUM: \"Стикеры\""
+        },
+       "28":
+      {
+        "base_name": "m4a1",
+        "access": "qr",
+        "name": "M4A1",
+        "v_model": "models/platinumstickers/v_m4a1.mdl",
+        "damage": 1.5,
+        "ammo": 40,
+        "bpammo": 120,
+        "speed_power": 1.15,
+        "give_type": 1,
+        "round": 2,
+        "touches": 1,
+      "menu_folder": "PLATINUM: \"Стикеры\""
+        },
+      "29":
+      {
+        "base_name": "deagle",
+        "access": "qr",
+        "name": "Deagle",
+        "v_model": "models/platinumstickers/v_deagle.mdl",
+        "p_model": "models/platinumstickers/p_deagle.mdl",
+        "w_model": "models/platinumstickers/w_deagle.mdl",
+        "damage": 1.5,
+        "ammo": 35,
+        "bpammo": 120,
+        "speed_power": 1.15,
+        "give_type": 1,
+        "round": 2,
+        "touches": 1,
+      "menu_folder": "PLATINUM: \"Стикеры\""
+      },
+       "30":
+         {
+      "base_name": "awp",
+        "access": "qr",
+        "name": "AWP",
+        "v_model": "models/platinumstickers/v_awp.mdl",
+        "p_model": "models/platinumstickers/p_awp.mdl",
+        "w_model": "models/platinumstickers/w_awp.mdl",
+        "damage": 1.5,
+        "ammo": 15,
+        "bpammo": 40,
+        "speed_power": 1.15,
+        "give_type": 1,
+        "round": 2,
+        "touches": 1,
+      "menu_folder": "PLATINUM: \"Стикеры\""
+		},
+		// Карты на которых не будет работать этот раздел
+		"maps":
+		[
+			"$",
+			"aim_",
+			"fy_",
+			"cs_deagle"
+		]
+	}
+}

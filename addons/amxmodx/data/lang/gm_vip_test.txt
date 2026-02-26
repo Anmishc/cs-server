@@ -1,0 +1,22 @@
+[ru]
+VIPTEST_PREFIX          = ^4#1FUP:^1
+VIPTEST_TIMEOUT_VIP     = Повторно отримати ^4безкоштовний ^3VIP ^1можна лише через ^4%s
+VIPTEST_YOU_VIP         = Ви ^3не можете використовувати ^4/viptest ^1бо він у вас ^3вже є^1!
+VIPTEST_YOU_GIVE_VIP    = ^3Ви отримали ^4/viptest ^1на ^3%s^1!
+VIPTEST_END             = ^3У вас закінчився ^4/viptest^1! ^nПовторно отримати можна лише через ^3%s^1!
+VIPTEST_CVAR_TIME       = На скільки видавати флаги в хвилинах.
+VIPTEST_CVAR_TIMEOUT    = Час перерви між тестами в днях.
+VIPTEST_CVAR_REMOVE     = Видаляти флаг "z"?
+VIPTEST_CVAR_FLAGS      = Флаг для видачі.
+VIPTEST_CVAR_IGN_FLAGS  = Флаги ігнору. "t:mv:d", де перевіряється кожен флаг в групі.^nВ даному випадку, якщо є "t", або "mv", або "d", то ігнор.
+[en]
+VIPTEST_PREFIX          = [^3GM VIP TEST^1]
+VIPTEST_TIMEOUT_VIP     = You can get ^4free ^3VIP ^1again only through ^4%s
+VIPTEST_YOU_VIP         = You ^3can't use ^4/vip test ^1because you ^3already have it^1!
+VIPTEST_YOU_GIVE_VIP    = ^3You got ^4/viptest^1 on ^3%s^1!
+VIPTEST_END             = ^3You have run out of ^4/viptest^1! ^nYou can only get it again after ^3%s^1!
+VIPTEST_CVAR_TIME       = How long to issue flags in minutes.
+VIPTEST_CVAR_TIMEOUT    = Break time between tests in days.
+VIPTEST_CVAR_REMOVE     = Delete the "z" flag?
+VIPTEST_CVAR_FLAGS      = Flag to issue.
+VIPTEST_CVAR_IGN_FLAGS  = Ignore flags. "t:mv:d", where every flag in the group is checked.^nIn this case, if there is a "t", or "mv", or "d", then ignore.

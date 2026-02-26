@@ -1,0 +1,7 @@
+[en]
+MAPM_RTV_LOCKED = ^4#1FUP:^1 RTV is available from ^3%d^1 players. Now: ^3%d^1.
+MAPM_LOWPOP_SWITCH_NEXT = ^4#1FUP:^1 Less than ^3%d^1 players. Next round we will switch map to ^3%s^1.
+
+[ru]
+MAPM_RTV_LOCKED = ^4#1FUP:^1 команда ^4/rtv^1 будет доступна при онлайне ^3%d^1 игроков. Сейчас: ^3%d^1.
+MAPM_LOWPOP_SWITCH_NEXT = ^4#1FUP:^1 на сервере меньше ^3%d^1 человек, в следующем раунде сменим карту на ^3%s^1.

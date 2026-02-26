@@ -1,0 +1,112 @@
+[ru]                           
+NKM_NO_ACCESS                   = !g#1FUP:!n У вас немає доступу до цього меню
+NKM_NOT_ENOUGH_PLAYERS          = !g#1FUP:!n На сервері менше 2 гравців
+NKM_PLAYER_NOT_INGAME           = !g#1FUP:!n Гравець покинув сервер
+NKM_KICK_CHAT_MSG               = !g#1FUP:!n %s!n відключив!t %s!n. Причина:!t
+NKM_WARNING_CHAT_MSG            = !g#1FUP:!n %s!n видав попередження!t %s!n. Причина:!t
+NKM_WARNING_HUD_MSG             = Вам видано попередження %d з %d^nАдмін: %s^nПричина:
+
+NKM_KICK_MENU_TITLE             = Кік меню \rNew
+NKM_KICK_MENU_SORT_ITEM         = Сортування [\y%L\w]
+NKM_KICK_MENU_FILTER_ITEM       = Задати фільтри
+NKM_KICK_REASON_MENU_TITLE      = Оберіть причину
+NKM_CONFIRM_ACTION_MENU_TITLE   = Підтвердіть дію
+NKM_CONFIRM_ACTION_MENU_PLAYER  = Кого \y%s
+NKM_CONFIRM_ACTION_MENU_REASON  = Причина \y%s
+NKM_CONFIRM_ACTION_MENU_KICK    = ->>> \rВідключити
+NKM_CONFIRM_ACTION_MENU_WARN    = ->>> \rВидати попередження
+
+NKM_FILTER_MENU_TITLE           = Задати фільтри
+NKM_FILTER_MENU_ALIVE           = Живі
+NKM_FILTER_MENU_DEAD            = Мертві
+NKM_FILTER_MENU_BOTS            = Боти
+NKM_FILTER_MENU_PLAYERS         = Реальні гравці
+NKM_FILTER_MENU_STEAM           = STEAM гравці
+NKM_FILTER_MENU_GSCLIENT        = GSCLIENT гравці
+NKM_FILTER_MENU_TT              = Команда TT
+NKM_FILTER_MENU_CT              = Команда CT
+NKM_FILTER_MENU_ST              = Команда ST
+NKM_FILTER_MENU_EXIT            = Повернутись до \yКік меню \rNew
+
+NKM_NO_SORT                     = без сортування
+NKM_SORT_BY_ALPHABET            = за алфавітом
+NKM_SORT_BY_FRAGS_DEATHS        = за фрагами та смертями
+
+NKM_MENU_BACK                   = Назад
+NKM_MENU_NEXT                   = Вперед
+NKM_MENU_EXIT                   = Вихід
+
+NKM_NOT_DEFINED_REASON          = Не вказана
+NKM_USER_DEFINED_REASON         = Своя причина
+NKM_REASON_1                    = Неадекват
+NKM_REASON_2                    = Моніторинг
+NKM_REASON_3                    = АФК
+NKM_REASON_4                    = Нуб | Ламер
+NKM_REASON_5                    = Кемпер
+NKM_REASON_6                    = Лагер
+NKM_REASON_7                    = Реклама | Флуд | Спам
+
+NKM_RULE_1                      = Неадекватна поведінка
+NKM_RULE_2                      = Заборонено моніторити
+NKM_RULE_3                      = Ви стояли без руху занадто довго
+NKM_RULE_4                      = Сервер не для новачків
+NKM_RULE_5                      = Необхідно виконувати завдання карти
+NKM_RULE_6                      = Ви лагаєте, налаштуйте інтернет та закрийте зайві програми
+NKM_RULE_7                      = Заборонені флуд, спам, реклама
+
+[en]                           
+NKM_NO_ACCESS                   = !n[!tИнфо!n] У Вас нет доступа к данному меню
+NKM_NOT_ENOUGH_PLAYERS          = !n[!tИнфо!n] На сервере менее 2х игроков
+NKM_PLAYER_NOT_INGAME           = !n[!tИнфо!n] Игрок покинул сервер
+NKM_KICK_CHAT_MSG               = !nАдмин!t %s!n выкинул!t %s!n. Причина:!t
+NKM_WARNING_CHAT_MSG            = !nАдмин!t %s!n выдал предупреждение!t %s!n. Причина:!t
+NKM_WARNING_HUD_MSG             = Вам выдано предупреждение %d из %d^nАдмин: %s^nПричина:
+
+NKM_KICK_MENU_TITLE             = Кик меню \rNew
+NKM_KICK_MENU_SORT_ITEM         = Сортировка [\y%L\w]
+NKM_KICK_MENU_FILTER_ITEM       = Задать фильтры
+NKM_KICK_REASON_MENU_TITLE      = Выберите причину
+NKM_CONFIRM_ACTION_MENU_TITLE   = Подтвердите действие
+NKM_CONFIRM_ACTION_MENU_PLAYER  = Кого \y%s
+NKM_CONFIRM_ACTION_MENU_REASON  = Причина \y%s
+NKM_CONFIRM_ACTION_MENU_KICK    = ->>> \rВыкинуть
+NKM_CONFIRM_ACTION_MENU_WARN    = ->>> \rВыдать предупреждение
+
+NKM_FILTER_MENU_TITLE           = Задать фильтры
+NKM_FILTER_MENU_ALIVE           = Живые
+NKM_FILTER_MENU_DEAD            = Мертвые
+NKM_FILTER_MENU_BOTS            = Боты
+NKM_FILTER_MENU_PLAYERS         = Реальные игроки
+NKM_FILTER_MENU_STEAM           = STEAM игроки
+NKM_FILTER_MENU_GSCLIENT        = GSCLIENT игроки
+NKM_FILTER_MENU_TT              = Команда TT
+NKM_FILTER_MENU_CT              = Команда CT
+NKM_FILTER_MENU_ST              = Команда ST
+NKM_FILTER_MENU_EXIT            = Вернуться в \yКик меню \rNew
+
+NKM_NO_SORT                     = без сортировки
+NKM_SORT_BY_ALPHABET            = по алфавиту
+NKM_SORT_BY_FRAGS_DEATHS        = по фрагам и смертям
+
+NKM_MENU_BACK                   = Назад
+NKM_MENU_NEXT                   = Вперед
+NKM_MENU_EXIT                   = Выход
+
+NKM_NOT_DEFINED_REASON          = Не указана
+NKM_USER_DEFINED_REASON         = Своя причина
+NKM_REASON_1                    = Неадекват
+NKM_REASON_2                    = Мониторинг
+NKM_REASON_3                    = АФК
+NKM_REASON_4                    = Нуб | Ламер
+NKM_REASON_5                    = Кемпер
+NKM_REASON_6                    = Лагер
+NKM_REASON_7                    = Реклама | Флуд | Спам
+
+NKM_RULE_1                      = Неадекватное поведение
+NKM_RULE_2                      = Запрещено мониторить
+NKM_RULE_3                      = Вы стояли без движения слишком долго
+NKM_RULE_4                      = Сервер не для новичков
+NKM_RULE_5                      = Необходимо выполнять задание карты
+NKM_RULE_6                      = Вы лагаете, настройте интернет и закройте лишние приложения
+NKM_RULE_7                      = Запрещены флуд, спам, реклама
+

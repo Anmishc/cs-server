@@ -1,0 +1,65 @@
+[ru]
+LANG_NAME                       = Українська
+TB_BALANCED_BY_SKILL_ALL        = !g#1FUP:!n Сильного!g %s!n замінили на!g %s!n!
+TB_BALANCED_BY_SKILL_ALL_LEADER = !g#1FUP:!n Сильного гравця!g %s!n переведено за!t %L!n!
+TB_BALANCED_BY_SKILL_ALL_LOOSER = !g#1FUP:!n Гравця!g %s!n переведено за!t %L!n!
+TB_BALANCED_BY_PLAYERSNUM_ALL   = !g#1FUP:!n Гравця!g %s!n автоматично переведено за!t %L
+TB_BALANCED_BY_PLAYERSNUM       = !g#1FUP:!n Вас автоматично переведено до іншої команди.
+TB_RESTRICT_CHANGETEAM          = !g#1FUP:!n Зміну команди заблоковано на!t %d!n %L
+TB_PLAYER_TRANSFERRED           = Вас автоматично переведено до іншої команди.
+
+TB_WORD_ENDING_ROUND1           = раундів
+TB_WORD_ENDING_ROUND2           = раунд
+TB_WORD_ENDING_ROUND3           = раунди
+
+TB_WORD_ENDING_SECOND1          = секунд
+TB_WORD_ENDING_SECOND2          = секунда
+TB_WORD_ENDING_SECOND3          = секунди
+
+TB_TERRORIST_TEAM               = терористів
+TB_COUNTER_TERRORIST_TEAM       = контр-терористів
+
+TB_SELECT_TEAM_MENU1_TITLE      = \rВибір команди:^n^n
+TB_SELECT_TEAM_MENU1_ITEM1      = \y1. %sТерористи [%d]^n
+TB_SELECT_TEAM_MENU1_ITEM2      = \y2. %sКонтр-терористи [%d]^n^n
+TB_SELECT_TEAM_MENU1_ITEM3      = \y5. \wВипадковий вибір^n
+TB_SELECT_TEAM_MENU1_ITEM4      = \y6. %sСпостереження^n^n
+TB_SELECT_TEAM_MENU1_EXIT       = \y0. \wВихід
+
+TB_SELECT_TEAM_MENU2_TITLE      = \yОберіть дію:^n^n
+TB_SELECT_TEAM_MENU2_ITEM1      = \y1. \rУвійти в гру^n
+TB_SELECT_TEAM_MENU2_ITEM2      = \y6. %sСпостереження^n^n
+TB_SELECT_TEAM_MENU2_EXIT       = \y0. \wВихід
+
+[en]
+LANG_NAME                       = English
+TB_BALANCED_BY_SKILL_ALL        = !g#1FUP:!n Сильного!g %s!n заменили на!g %s!n!
+TB_BALANCED_BY_SKILL_ALL_LEADER = !g#1FUP:!n Сильный игрок!g %s!n переведен за!t %L!n!
+TB_BALANCED_BY_SKILL_ALL_LOOSER = !g#1FUP:!n Игрок!g %s!n переведен за!t %L!n!
+TB_BALANCED_BY_PLAYERSNUM_ALL   = !g#1FUP:!n Игрок!g %s!n автоматически переведен за!t %L
+TB_BALANCED_BY_PLAYERSNUM       = !g#1FUP:!n Вы автоматически переведены за другую команду.
+TB_RESTRICT_CHANGETEAM          = !g#1FUP:!n Смена команды заблокирована на!t %d!n %L
+TB_PLAYER_TRANSFERRED           = Вы автоматически переведены за другую команду.
+
+TB_WORD_ENDING_ROUND1           = раундов
+TB_WORD_ENDING_ROUND2           = раунд
+TB_WORD_ENDING_ROUND3           = раунда
+
+TB_WORD_ENDING_SECOND1          = секунд
+TB_WORD_ENDING_SECOND2          = секунда
+TB_WORD_ENDING_SECOND3          = секунды
+
+TB_TERRORIST_TEAM               = террористов
+TB_COUNTER_TERRORIST_TEAM       = контр-террористов
+
+TB_SELECT_TEAM_MENU1_TITLE      = \rВыбор команды:^n^n
+TB_SELECT_TEAM_MENU1_ITEM1      = \y1. %sТеррористы [%d]^n
+TB_SELECT_TEAM_MENU1_ITEM2      = \y2. %sКонтр-террористы [%d]^n^n
+TB_SELECT_TEAM_MENU1_ITEM3      = \y5. \wСлучайный выбор^n
+TB_SELECT_TEAM_MENU1_ITEM4      = \y6. %sНаблюдение^n^n
+TB_SELECT_TEAM_MENU1_EXIT       = \y0. \wВыход
+
+TB_SELECT_TEAM_MENU2_TITLE      = \yВыберите действие:^n^n
+TB_SELECT_TEAM_MENU2_ITEM1      = \y1. \rВойти в игру^n
+TB_SELECT_TEAM_MENU2_ITEM2      = \y6. %sНаблюдение^n^n
+TB_SELECT_TEAM_MENU2_EXIT       = \y0. \wВыход
