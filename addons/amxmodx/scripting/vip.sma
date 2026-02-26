@@ -3,8 +3,6 @@
 #include <fakemeta>
 #include <hamsandwich>
 #include <json>
-#include <nvault>
-
 #include <emma_jule>
 
 // Для поддержки VIP-статуса в ScoreAttrib
@@ -23,9 +21,6 @@ stock const EntVars:weapon_speed = var_fuser4;
 const FFADE_IN = 0x0000;
 const UNIT_SECOND = (1 << 12);
 const INVALID_ACCESS = (1 << 31);
-
-// Special menu action ID for clearing saved weapon (beyond any weapon/section index)
-const VIP_CLEAR_SAVED_WEAPON_ACTION = 250;
 
 // Максимальное допустимое кол-во кастомных оружий
 const MAX_CUSTOM_WEAPONS = 64;
@@ -145,7 +140,6 @@ enum _:SECTION_STRUCT {
 
 new g_iUsageCount[MAX_PLAYERS + 1], g_iCustomWeaponLeftRounds[MAX_PLAYERS + 1][MAX_CUSTOM_WEAPONS];
 new Array:g_aSampleConnectMusic, Array:g_aMenuSections, g_SamplesConnectNum;
-new g_hSavedWeaponsVault = INVALID_HANDLE;
 new Trie:g_tMaxUsages, Trie:g_tUsagesRoundRestrictions, Trie:g_tDefaultWeapons; // Trie:g_tWallClassNames
 new bool:g_IsNoVIPMenuOnThisMap = false, bool:g_IsNoEquipOnThisMap = false;
 new HamHook:fw_C4_PrimaryAttack;
@@ -155,8 +149,6 @@ new g_szMapName[64];
 public plugin_precache()
 {
 	register_plugin("VIP System", "2.1.1", "Emma Jule");
-	
-	g_hSavedWeaponsVault = nvault_open("vip_saved_weapons");
 	
 	// Get current map name
 	get_mapname(g_szMapName, charsmax(g_szMapName));
@@ -269,8 +261,7 @@ public plugin_init()
 	// RegisterHookChain(RG_CBasePlayer_ResetMaxSpeed, "CBasePlayer_ResetMaxSpeed", true);
 	RegisterHookChain(RG_CBasePlayer_Killed, "CBasePlayer_Killed", true);
 	RegisterHookChain(RG_CBasePlayer_ThrowGrenade, "CBasePlayer_ThrowGrenade", true);
-	// RG_CBasePlayerWeapon_DefaultDeploy not supported in current ReAPI version
-	// RegisterHookChain(RG_CBasePlayerWeapon_DefaultDeploy, "CBasePlayerWeapon_DefaultDeploy", false);
+	RegisterHookChain(RG_CBasePlayerWeapon_DefaultDeploy, "CBasePlayerWeapon_DefaultDeploy", false);
 	RegisterHookChain(RG_CWeaponBox_SetModel, "CWeaponBox_SetModel", false);
 	
 	RegisterHam(Ham_Touch, "weaponbox", "CWeaponBox_Touch", false);
@@ -388,15 +379,6 @@ show_vip_menu(id)
 {
 	new menu = menu_create(fmt("%L", LANG_PLAYER, "VIP_MENU_TITLE", g_iUsageCount[id]), "vip_menu_handler");
 	
-	// Show saved weapon option at top if exists
-	new iSavedIdx = GetSavedWeaponIndex(id);
-	if (iSavedIdx >= 0 && iSavedIdx < g_iCustomWeaponsNum)
-	{
-		new aSaved[WEAPON_DATA];
-		ArrayGetArray(g_aCustomWeapons, iSavedIdx, aSaved);
-		menu_additem(menu, fmt("%L", LANG_PLAYER, "VIP_MENU_SAVED_WEAPON", aSaved[NAME]), fmt("%d", VIP_CLEAR_SAVED_WEAPON_ACTION));
-	}
-	
 	// Load sections
 	for (new i, Section[SECTION_STRUCT], aSize = ArraySize(g_aMenuSections), iFlags = get_user_flags(id); i < aSize; i++)
 	{
@@ -455,13 +437,7 @@ public vip_menu_handler(id, menu, item)
 	menu_destroy(menu);
 	new i = strtol(szID);
 	
-	if (i == VIP_CLEAR_SAVED_WEAPON_ACTION)
-	{
-		ClearSavedWeapon(id);
-		client_print_color(id, print_team_blue, "%L %L", LANG_PLAYER, "VIP_PREFIX", LANG_PLAYER, "VIP_SAVED_WEAPON_CLEARED");
-		return PLUGIN_HANDLED;
-	}
-	else if (i < MAX_CUSTOM_WEAPONS)
+	if (i < MAX_CUSTOM_WEAPONS)
 	{
 		new aWeapon[WEAPON_DATA];
 		ArrayGetArray(g_aCustomWeapons, i, aWeapon);
@@ -481,8 +457,8 @@ public vip_menu_handler(id, menu, item)
 				g_iCustomWeaponLeftRounds[id][i] = aWeapon[ROUND];
 			
 			g_iUsageCount[id]++;
-			// Show save prompt (it will re-show vip menu if LEFT_ITEMS after choice)
-			show_vip_save_menu(id, i);
+			if (!UTIL_IsMaxTimesReached(id) && (CVAR[MENU_MODE] & LEFT_ITEMS))
+				show_vip_menu(id);
 		}
 	}
 	else
@@ -681,28 +657,9 @@ public CBasePlayer_OnSpawnEquip(const id)
 	if (rg_get_current_round() < CVAR[MENU_ROUND])
 		return;
 	
-	// Show vip menu or auto-give saved weapon?
+	// Show vip menu
 	if ((CVAR[MENU_MODE] & NO_PRIMARY) && !rg_user_has_primary(id) || (CVAR[MENU_MODE] & DIE_IN_PREVIOUS_ROUND) && !get_member(id, m_bNotKilled))
 	{
-		new iSavedIdx = GetSavedWeaponIndex(id);
-		if (iSavedIdx >= 0 && iSavedIdx < g_iCustomWeaponsNum)
-		{
-			new aSaved[WEAPON_DATA];
-			ArrayGetArray(g_aCustomWeapons, iSavedIdx, aSaved);
-			
-			if (aSaved[NAME][0] && UTIL_IsAccessGranted(id, aSaved[ACCESS]) && g_iCustomWeaponLeftRounds[id][iSavedIdx] <= 0)
-			{
-				if (give_item(id, aSaved))
-				{
-					rg_add_account(id, -aSaved[COST]);
-					if (aSaved[ROUND] > 0)
-						g_iCustomWeaponLeftRounds[id][iSavedIdx] = aSaved[ROUND];
-					g_iUsageCount[id]++;
-					client_print_color(id, print_team_blue, "%L %L", LANG_PLAYER, "VIP_PREFIX", LANG_PLAYER, "VIP_AUTO_WEAPON", aSaved[NAME]);
-					return; // skip showing menu
-				}
-			}
-		}
 		show_vip_menu(id);
 	}
 }
@@ -1010,86 +967,6 @@ public Message_ScoreAttrib(msg_id, msg_type, msg_entity)
 		return;
 	
 	set_msg_arg_int(2, ARG_BYTE, SCORE_STATUS_VIP);
-}
-
-// ============================================================
-// VIP Saved Weapon helpers
-// ============================================================
-
-GetSavedWeaponIndex(id)
-{
-	if (g_hSavedWeaponsVault == INVALID_HANDLE)
-		return -1;
-	
-	new szAuth[MAX_AUTHID_LENGTH], szBuf[8];
-	get_user_authid(id, szAuth, charsmax(szAuth));
-	
-	if (!nvault_get(g_hSavedWeaponsVault, szAuth, szBuf, charsmax(szBuf)))
-		return -1;
-	
-	new idx = str_to_num(szBuf);
-	return (idx >= 0 && idx < g_iCustomWeaponsNum) ? idx : -1;
-}
-
-SaveWeapon(id, idx)
-{
-	if (g_hSavedWeaponsVault == INVALID_HANDLE)
-		return;
-	
-	new szAuth[MAX_AUTHID_LENGTH];
-	get_user_authid(id, szAuth, charsmax(szAuth));
-	nvault_set(g_hSavedWeaponsVault, szAuth, fmt("%d", idx));
-}
-
-ClearSavedWeapon(id)
-{
-	if (g_hSavedWeaponsVault == INVALID_HANDLE)
-		return;
-	
-	new szAuth[MAX_AUTHID_LENGTH];
-	get_user_authid(id, szAuth, charsmax(szAuth));
-	nvault_remove(g_hSavedWeaponsVault, szAuth);
-}
-
-show_vip_save_menu(id, weaponIdx)
-{
-	new aWeapon[WEAPON_DATA];
-	ArrayGetArray(g_aCustomWeapons, weaponIdx, aWeapon);
-	
-	new menu = menu_create(fmt("%L", LANG_PLAYER, "VIP_SAVE_MENU_TITLE", aWeapon[NAME]), "vip_save_menu_handler");
-	menu_additem(menu, fmt("%L", LANG_PLAYER, "VIP_SAVE_MENU_YES"), fmt("%d", weaponIdx));
-	menu_additem(menu, fmt("%L", LANG_PLAYER, "VIP_SAVE_MENU_NO"), "-1");
-	menu_setprop(menu, MPROP_EXITNAME, fmt("%L", LANG_PLAYER, "VIP_MENU_EXIT"));
-	menu_display(id, menu);
-}
-
-public vip_save_menu_handler(id, menu, item)
-{
-	if (item == MENU_EXIT)
-	{
-		menu_destroy(menu);
-		if (!UTIL_IsMaxTimesReached(id) && (CVAR[MENU_MODE] & LEFT_ITEMS))
-			show_vip_menu(id);
-		return PLUGIN_HANDLED;
-	}
-	
-	new szID[6];
-	menu_item_getinfo(menu, item, .info = szID, .infolen = charsmax(szID));
-	menu_destroy(menu);
-	
-	new weaponIdx = str_to_num(szID);
-	if (weaponIdx >= 0)
-	{
-		SaveWeapon(id, weaponIdx);
-		new aWeapon[WEAPON_DATA];
-		ArrayGetArray(g_aCustomWeapons, weaponIdx, aWeapon);
-		client_print_color(id, print_team_blue, "%L %L", LANG_PLAYER, "VIP_PREFIX", LANG_PLAYER, "VIP_WEAPON_SAVED", aWeapon[NAME]);
-	}
-	
-	if (!UTIL_IsMaxTimesReached(id) && (CVAR[MENU_MODE] & LEFT_ITEMS))
-		show_vip_menu(id);
-	
-	return PLUGIN_HANDLED;
 }
 
 // ============================================================
