@@ -1,6 +1,11 @@
 # Compiled AMXX plugins (binary) - keep only source .sma
 addons/amxmodx/plugins/*.amxx
 
+# Local AMXX compiler binaries (not needed in repo)
+addons/amxmodx/scripting/amxxpc.exe
+addons/amxmodx/scripting/amxxpc32.dll
+addons/amxmodx/scripting/compile.exe
+
 # AMXX data vault files (runtime generated)
 addons/amxmodx/data/vault/
 

@@ -88,16 +88,43 @@ admin.amxx
 
 ---
 
-## 📝 Компиляция плагинов
+## 📝 Создание и деплой нового плагина
 
-Исходники `.sma` находятся в `addons/amxmodx/scripting/`.  
-Компилятор `amxxpc.exe` уже есть в этой папке.
-
-```powershell
-# Скомпилировать плагин
-cd addons\amxmodx\scripting
-.\amxxpc.exe my_plugin.sma -o ..\plugins\my_plugin.amxx
+### Шаг 1 — Написать плагин
+Создай файл `.sma` в `addons/amxmodx/scripting/`:
 ```
+addons/amxmodx/scripting/my_plugin.sma
+```
+
+### Шаг 2 — Скомпилировать
+Компилятор `amxxpc.exe` уже лежит в `addons/amxmodx/scripting/`.  
+Запускать **обязательно из этой папки**, иначе не найдёт `include/`:
+```powershell
+cd addons\amxmodx\scripting
+.\amxxpc.exe my_plugin.sma
+# Создаст my_plugin.amxx рядом
+```
+Или через **AMXX-Studio** — просто нажать F5 (компилятор уже настроен).
+
+### Шаг 3 — Положить .amxx в plugins
+```powershell
+Move-Item addons\amxmodx\scripting\my_plugin.amxx addons\amxmodx\plugins\
+```
+
+### Шаг 4 — Прописать в plugins.ini
+Добавь строку в `addons/amxmodx/configs/plugins.ini`:
+```ini
+my_plugin.amxx
+```
+
+### Шаг 5 — Задеплоить на сервер
+```powershell
+.\deploy.ps1 -Env dev -Only plugins
+# или сразу всё:
+.\deploy.ps1 -Env dev
+```
+
+> ⚠️ Все кастомные `.inc` заголовки кладутся в `addons/amxmodx/scripting/include/`
 
 ---
 
