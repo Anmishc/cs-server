@@ -30,6 +30,46 @@ VIP_CUSTOM_WEAPONS_BLOCK_PICKUP = У вас нет доступа.
 
 VIP_BUY_CUSTOM_GUN = ^3Вы взяли^4 %s
 
+VIP_SAVE_MENU_TITLE = \wСохранить \r%s\w как авто-оружие?
+VIP_SAVE_MENU_YES = \dДа, сохранить
+VIP_SAVE_MENU_NO = \dНет, не сохранять
+VIP_WEAPON_SAVED = ^4Авто-оружие сохранено:^3 %s
+VIP_AUTO_WEAPON = ^4Авто-оружие:^3 %s^1 | /vip — изменить.
+VIP_MENU_SAVED_WEAPON = ^4>> Авто: %s [отменить] <<
+VIP_SAVED_WEAPON_CLEARED = ^3Авто-выбор оружия отменён.
+
+[ua]
+VIP_PREFIX = ^4#1FUP:^1
+
+VIP_CUSTOM_WEAPONS_LOADED = Успішно завантажено %i кастомних зброй.
+
+VIP_CONNECT_INFO = ^3VIP-гравець %n приєднався..
+VIP_TIME_EXPIRED = ^3Час отримання зброї минув.
+VIP_ROUND = ^3Доступно з %i раунду.
+VIP_MAX_USE = ^3Ви перевищили ліміт використань меню в цьому раунді.
+VIP_NOT_ALIVE = ^3Тільки для живих гравців.
+VIP_NOT_IN_BUYZONE = ^3Ви можете брати зброю тільки в зоні покупки.
+VIP_NO_CUSTOM_WEAPONS = ^3На сервері немає зброї.
+VIP_NO_CUSTOM_WEAPONS_ON_THIS_MAP = ^3На цій карті зброярня заборонена.
+
+VIP_MENU_TITLE = \r#1FUP \w- Меню зброї
+VIP_SECTION_MENU_TITLE = %s^n\dДоступно зброї: \r %i\d
+
+VIP_WEAPON_NO_MONEY = %s^t\r%i$
+VIP_WEAPON_INVALID_ROUND = %s^t\r(через %i раунд.)
+
+VIP_MENU_NEXT = Далі
+VIP_MENU_BACK = Назад
+VIP_MENU_EXIT = Вихід
+
+VIP_ONLINE = ^3VIP онлайн:^1
+VIP_ONLINE_NO = ^3немає!
+
+VIP_VAMPIRE_HUD_INFO = + %.0f HP
+VIP_CUSTOM_WEAPONS_BLOCK_PICKUP = У вас немає доступу.
+
+VIP_BUY_CUSTOM_GUN = ^3Ви взяли^4 %s
+
 VIP_SAVE_MENU_TITLE = \wЗберегти \r%s\w як авто-зброю?
 VIP_SAVE_MENU_YES = \dТак, зберегти
 VIP_SAVE_MENU_NO = \dНі, не зберігати

@@ -152,6 +152,13 @@ TELE_MENU = Телепорт меню
 CUR_LOC = Текущее положение
 SAVE_LOC = Сохранить положение
 
+[ua]
+ADMIN_TELEPORT_1 = АДМІНІСТРАТОР: телепортував %s
+ADMIN_TELEPORT_2 = АДМІНІСТРАТОР %s: телепортував %s
+TELE_MENU = Меню телепорту
+CUR_LOC = Поточне положення
+SAVE_LOC = Зберегти положення
+
 [cn]
 ADMIN_TELEPORT_1 = 管理员: 传送 %s
 ADMIN_TELEPORT_2 = 管理员 %s: 传送 %s

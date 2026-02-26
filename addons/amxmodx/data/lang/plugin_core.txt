@@ -1,4 +1,32 @@
 [ru]                           
+LANG_NAME                       = Русский
+PC_SETTINGS_MENU_TITLE          = Настройки
+PC_SETTINGS_MENU_EXIT           = Выход
+PC_SETTINGS_MENU_NEXT           = След.
+PC_SETTINGS_MENU_BACK           = Назад
+PC_RETURN_TO_SETTINGS_MENU      = Вернуться в \yНастройки
+
+PC_WORD_ENDING_SECOND1          = секунд
+PC_WORD_ENDING_SECOND2          = секунда
+PC_WORD_ENDING_SECOND3          = секунды
+PC_WORD_ENDING_SECOND4          = секунду
+
+PC_WORD_ENDING_MINUTE1          = минут
+PC_WORD_ENDING_MINUTE2          = минута
+PC_WORD_ENDING_MINUTE3          = минуты
+PC_WORD_ENDING_MINUTE4          = минуту
+
+PC_WORD_ENDING_HOUR1            = часов
+PC_WORD_ENDING_HOUR2            = час
+PC_WORD_ENDING_HOUR3            = часа
+PC_WORD_ENDING_HOUR             = час
+
+PC_WORD_ENDING_DAY1             = дней
+PC_WORD_ENDING_DAY2             = день
+PC_WORD_ENDING_DAY3             = дня
+PC_WORD_ENDING_DAY4             = день
+
+[ua]                           
 LANG_NAME                       = Українська
 PC_SETTINGS_MENU_TITLE          = Налаштування
 PC_SETTINGS_MENU_EXIT           = Вихід

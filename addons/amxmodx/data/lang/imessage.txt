@@ -64,5 +64,8 @@ INF_REACH = Dostignut limit Informacione Poruke
 [ru]
 INF_REACH = Достигнут максимум информационных сообщений!
 
+[ua]
+INF_REACH = Досягнуто максимум інформаційних повідомлень!
+
 [cn] 
 INF_REACH=信息消息已达到限制数量！

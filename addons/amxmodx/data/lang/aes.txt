@@ -1,92 +1,92 @@
 ﻿[ru]
-LVL_1 = Рядовий
-LVL_2 = Єфрейтор
-LVL_3 = Мол. сержант
+LVL_1 = Рядовой
+LVL_2 = Ефрейтор
+LVL_3 = Мл. сержант
 LVL_4 = Сержант
 LVL_5 = Ст. сержант
 LVL_6 = Старшина
 LVL_7 = Прапорщик
 LVL_8 = Ст. прапорщик
-LVL_9 = Мол. лейтенант
+LVL_9 = Мл. лейтенант
 LVL_10 = Лейтенант
 LVL_11 = Ст. лейтенант
-LVL_12 = Капітан
+LVL_12 = Капитан
 LVL_13 = Майор
-LVL_14 = Підполковник
+LVL_14 = Подполковник
 LVL_15 = Полковник
 LVL_16 = Генерал-майор
 LVL_17 = Генерал-лейтенант
 LVL_18 = Генерал-полковник
-LVL_19 = Генерал армії
+LVL_19 = Генерал армии
 LVL_20 = Маршал
 
 AES_TAG = ^1[^4AES^1]
 AES_TAG_MENU = \r[\yAES\r]\w
 AES_TAG_CON = [AES]
 
-AES_INFORMER0 = Нік : %s
+AES_INFORMER0 = Ник : %s
 AES_INFORMER1 = Ранг : %s
-AES_INFORMER2 = Досвід : [%.0f/%.0f]
+AES_INFORMER2 = Опыт : [%.0f/%.0f]
 
-AES_HUD_TPL = Ранг: <rank>\nДосвід: [<exp>/<levelexp>]\nСкіл: <skill>
-AES_HUD_TPL_D = Нік: <name>\nРанг: <rank>\nДосвід: [<exp>/<levelexp>]\nСкіл: <skill>
+AES_HUD_TPL = Ранг: <rank>\nОпыт: [<exp>/<levelexp>]\nСкилл: <skill>
+AES_HUD_TPL_D = Ник: <name>\nРанг: <rank>\nОпыт: [<exp>/<levelexp>]\nСкилл: <skill>
 
-AES_NEWLEVEL_TPL = Вітаємо, <name>, ви досягли <level> рівня - Наступний рівень: <levelexp> XP - Потрібно: <needexp> XP
-AES_NEWLEVEL_ALL_TPL = <name> досягнув <level> рівня [ <rank> ]
+AES_NEWLEVEL_TPL = Поздравляем, <name>, вы достигли <level> уровня - Следующий уровень: <levelexp> XP - Нужно: <needexp> XP
+AES_NEWLEVEL_ALL_TPL = <name> достиг <level> уровня [ <rank> ]
 
-AES_INFORMER_FAIL = Статистика не враховується
-AES_PLAYER_XP_MAX = Досягнуто максимум розвитку
-AES_PLAYER_LEVEL_MAX = ^4%s досяг максимального рівня!
+AES_INFORMER_FAIL = Статистика не учитывается
+AES_PLAYER_XP_MAX = Достигнут максимум развития
+AES_PLAYER_LEVEL_MAX = ^4%s достиг максимального уровня!
 
-AES_INFORMER_ENABLED = HUD повідомлення з поточним рангом ^3Увімкнено^1.
-AES_INFORMER_DISABLED = HUD повідомлення з поточним рангом ^3Вимкнено^1.
+AES_INFORMER_ENABLED = HUD сообщение с текущим рангом ^3Включено^1.
+AES_INFORMER_DISABLED = HUD сообщение с текущим рангом ^3Отключено^1.
 
-AES_NEWLEVEL_ALL = Солдат ^3%s^1 досяг рангу ^4%s^1. Вітаємо!
-AES_NEWLEVEL_ID = Ви заслужили підвищення - ^4%s^1. Вітаємо!
+AES_NEWLEVEL_ALL = Солдат ^3%s^1 достиг ранга ^4%s^1. Поздравляем!
+AES_NEWLEVEL_ID = Вы заслужили повышение - ^4%s^1. Поздравляем!
 
-AES_BONUS_MENU = Що оберете?\n\wУ вас \r<p>\w бонусів
-AES_BONUS_M4A1 = M4A1 \y+патрони
-AES_BONUS_AK47 = AK47 \y+патрони
-AES_BONUS_AWP = AWP \y+патрони
+AES_BONUS_MENU = Что выберете?\n\wУ вас \r<p>\w бонусов
+AES_BONUS_M4A1 = M4A1 \y+патроны
+AES_BONUS_AK47 = AK47 \y+патроны
+AES_BONUS_AWP = AWP \y+патроны
 AES_BONUS_10000M = 10000\r$
 AES_BONUS_200HP = 200\rHP
 AES_BONUS_200CP = 200\rCP
-AES_BONUS_MEGAGRENADE = МегаГраната \r(\y300%% \wурону\r)
-AES_BONUS_MEGADEAGLE = МегаДигл \r(\y200%% \wурону\r)
+AES_BONUS_MEGAGRENADE = МегаГраната \r(\y300%% \wурона\r)
+AES_BONUS_MEGADEAGLE = МегаДигл \r(\y200%% \wурона\r)
 
 AES_BONUS_NADE = Граната
 AES_BONUS_FLASHBANG = Флешка
 AES_BONUS_SMOKENADE = Смок
 AES_BONUS_DEFKIT = Дефьюз
-AES_BONUS_NV = Найтвіжн
+AES_BONUS_NV = Найтвижн
 AES_BONUS_ARMOR = Броня
 AES_BOUNS_HP = HP
 
 AES_ANEW_INFO1 = \w[\r%d бон.\w]
 AES_ANEW_INFO2 = \w[\r%.2f оп.\w]
-AES_ANEW_INFO3 = \w[\r%d рів.\w]
+AES_ANEW_INFO3 = \w[\r%d ур.\w]
 AES_ANEW_INFO4 = \w[\r%d рнд.\w]
-AES_ANEW_INFO5 = \w[\rЧас\w]
-AES_ANEW_INFO6 = \w[\rНемає флагу\w]
-AES_ANEW_INFO7 = \w[\rЗаборонений флаг\w]
-AES_ANEW_INFO8 = Ваші бонуси:
-AES_ANEW_INFO9 = та %d інших.
+AES_ANEW_INFO5 = \w[\rВремя\w]
+AES_ANEW_INFO6 = \w[\rНет флага\w]
+AES_ANEW_INFO7 = \w[\rЗапрещённый флаг\w]
+AES_ANEW_INFO8 = Ваши бонусы:
+AES_ANEW_INFO9 = и ещё %d.
 
-AES_BONUS_GET_MEGADEAGLE = Ваш ^3дигл^1 наносить в ^42.0^1 більше урону!
-AES_BONUS_GET_MEGAGRENADE = Ваша ^3граната^1 наносить в ^43.0^1 більше урону!
+AES_BONUS_GET_MEGADEAGLE = Ваш ^3дигл^1 наносит в ^42.0^1 больше урона!
+AES_BONUS_GET_MEGAGRENADE = Ваша ^3граната^1 наносит в ^43.0^1 больше урона!
 
-AES_ANEW_GAIN = Ви ^3заробили^1 ^4%d^1 бонус очок(ів)!
-AES_ANEW_HUD = У вас %d бонус очок\nВведіть /anew у чат
+AES_ANEW_GAIN = Вы ^3заработали^1 ^4%d^1 бонус очков!
+AES_ANEW_HUD = У вас %d бонус очков\nВведите /anew в чате
 
-AES_ANEW_DISABLE = ^3Система бонусів вимкнена!
-AES_ANEW_BLOCKED = ^3Система бонусів на цій карті вимкнена!
-AES_ANEW_ROUND = ^3Доступно з ^4%d^3 раунду!
-AES_ANEW_NOTENG = ^3У вас недостатньо бонус очок!
-AES_ANEW_NOT = ^3У вас немає бонус очок!
-AES_ANEW_ALIVE = ^3Лише для живих гравців!
-AES_ANEW_BUYTIME = %d секунд минуло. Покупка заборонена!
-AES_ANEW_GIVE = Ви взяли ^3%s^1 за ^4%d^1 бонусів.
-AES_ANEW_CALL_PROBLEM = ^3Помилка:^1 Щось пішло не так!
+AES_ANEW_DISABLE = ^3Система бонусов отключена!
+AES_ANEW_BLOCKED = ^3Система бонусов на этой карте отключена!
+AES_ANEW_ROUND = ^3Доступно с ^4%d^3 раунда!
+AES_ANEW_NOTENG = ^3У вас недостаточно бонус очков!
+AES_ANEW_NOT = ^3У вас нет бонус очков!
+AES_ANEW_ALIVE = ^3Только для живых игроков!
+AES_ANEW_BUYTIME = %d секунд прошло. Покупка запрещена!
+AES_ANEW_GIVE = Вы взяли ^3%s^1 за ^4%d^1 бонусов.
+AES_ANEW_CALL_PROBLEM = ^3Ошибка:^1 Что-то пошло не так!
 
 [en]
 LVL_1 = Frightened Civilian

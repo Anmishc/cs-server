@@ -1,4 +1,15 @@
 [ru]
+AFK__WARN_CENTER = Начните двигаться.
+AFK__WARN_CHAT = ^4#1FUP:^1 Начните двигаться, иначе вас переместят в наблюдатели.
+AFK__KICK_AFK = Вы отключены за AFK.
+AFK__SPEC_AFK = Вы отключены за долгое нахождение среди наблюдателей.
+AFK__KICK_AFK_ALL = ^4#1FUP:^1 Игрок ^3%n ^1отключён за AFK.
+AFK__YOU_GOT_BOMB = ^4#1FUP:^1 Вы получили бомбу!
+AFK__BOMB_TRANSFERED_TO = ^4#1FUP:^1 Бомба передана игроку %n
+AFK__TRANSFER_TO_SPEC_INFO = ^4#1FUP:^1 Игрок ^3%n ^1переведён в наблюдатели.
+AFK__ARE_YOU_THERE = \yВы здесь?^n^n\r1. \wДа!
+
+[ua]
 AFK__WARN_CENTER = Почніть рухатися.
 AFK__WARN_CHAT = ^4#1FUP:^1 Почніть рухатися, інакше вас перемістять до глядачів.
 AFK__KICK_AFK = Вас відключено за AFK.

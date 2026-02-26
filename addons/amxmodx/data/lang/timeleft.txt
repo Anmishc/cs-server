@@ -196,6 +196,15 @@ MINUTES = минут
 SECOND = секунда
 SECONDS = секунд
 
+[ua]
+THE_TIME = Час
+TIME_LEFT = Залишилось
+NO_T_LIMIT = Необмежено
+MINUTE = хвилина
+MINUTES = хвилин
+SECOND = секунда
+SECONDS = секунд
+
 [cn]
 THE_TIME = 当前时间
 TIME_LEFT = 剩余时间

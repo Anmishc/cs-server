@@ -108,6 +108,11 @@ CMD_MENU = Меню команд
 CONF_MENU = Меню настроек
 SPE_MENU = Меню звуков
 
+[ua]
+CMD_MENU = Меню команд
+CONF_MENU = Меню налаштувань
+SPE_MENU = Меню звуків
+
 [cn]
 CMD_MENU = 命令菜单
 CONF_MENU = 配置菜单

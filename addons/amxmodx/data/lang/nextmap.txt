@@ -108,6 +108,11 @@ NEXT_MAP = Следующая карта:
 PLAYED_MAP = Текущая карта
 FRIEND_FIRE = Огонь по своим
 
+[ua]
+NEXT_MAP = Наступна карта:
+PLAYED_MAP = Поточна карта
+FRIEND_FIRE = Вогонь по своїх
+
 [cn]
 NEXT_MAP = 下张地图:
 PLAYED_MAP = 已经玩过地图

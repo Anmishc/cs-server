@@ -8,6 +8,16 @@ MM_ALERT_CHAT = Ты %L ^3%n
 MM_ALERT_CHAT_ALL_SET = Ты замутил ^3всех
 MM_ALERT_CHAT_ALL_UNSET = Ты снял мут ^3со всех
 
+[ua]
+MM_MENU_TITLE = \r#1FUP:\w Mute Меню
+MM_MENU_ITEM_ALL = Замутити всіх
+MM_MENU_LABEL_GAGGED = \r[\в муті\r]
+MM_ALERT_OPTION_SET = замутив
+MM_ALERT_OPTION_UNSET = зняв мут з
+MM_ALERT_CHAT = Ти %L ^3%n
+MM_ALERT_CHAT_ALL_SET = Ти замутив ^3всіх
+MM_ALERT_CHAT_ALL_UNSET = Ти зняв мут ^3з усіх
+
 [en]
 MM_MENU_TITLE = \r#1FUP:\w Menu
 MM_MENU_ITEM_ALL = Mute all

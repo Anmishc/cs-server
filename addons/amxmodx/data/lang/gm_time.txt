@@ -11,3 +11,17 @@ GM_MINUTE_SINGULAR = ^3%i ^4минуты
 GM_SECOND_PLURAL = ^3%i ^4секунд
 GM_SECOND_NOMINATIVE = ^3%i ^4секунда
 GM_SECOND_SINGULAR = ^3%i ^4секунды
+
+[ua]
+GM_DAY_PLURAL = ^3%i ^4днів
+GM_DAY_NOMINATIVE = ^3%i ^4день
+GM_DAY_SINGULAR = ^3%i ^4дні
+GM_HOUR_PLURAL = ^3%i ^4годин
+GM_HOUR_NOMINATIVE = ^3%i ^4година
+GM_HOUR_SINGULAR = ^3%i ^4години
+GM_MINUTE_PLURAL = ^3%i ^4хвилин
+GM_MINUTE_NOMINATIVE = ^3%i ^4хвилина
+GM_MINUTE_SINGULAR = ^3%i ^4хвилини
+GM_SECOND_PLURAL = ^3%i ^4секунд
+GM_SECOND_NOMINATIVE = ^3%i ^4секунда
+GM_SECOND_SINGULAR = ^3%i ^4секунди

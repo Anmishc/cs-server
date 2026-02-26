@@ -38,6 +38,46 @@ MOLOTOV_BMRBS_ROUNDS_3 = раунда
 MOLOTOV_BMRBS_ONLY_BUYZONE = ^3* ^1Доступно только в зоне закупки!
 MOLOTOV_BMRBS_NOT_ENOUGH_POINTS = ^3* ^1Вам не хватает очков!
 
+[ua]
+CVAR_ACCESS = Прапори доступу - для купівлі або видачі молотова (вимагає наявності прописаних - "abc" / порожній рядок "" - купівля доступна всім)
+CVAR_EQUIP_ACCESS = Скільки гранат видавати при спавні
+CVAR_CHECK_BUYZONE = Перевіряти чи знаходиться гравець у зоні покупки
+CVAR_COST = Ціна молотова
+CVAR_BUY_LIMIT = Скільки молотовів можна купити за один раунд (значення: -1 прибирає ліміт)
+CVAR_LIMIT_ROUND = З якого раунду після початку гри буде доступний молотов
+CVAR_HIT_PLAYER = Скільки шкоди завдавати при попаданні молотова в тіло гравця
+CVAR_KILLFEED = Показувати чи ні в кіллфіді поряд з ім'ям приставку [ᴍᴏʟᴏᴛᴏᴠ]
+CVAR_RADIUS = Радіус горіння молотова
+CVAR_THROWTIME = Скільки секунд молотов може знаходитися в польоті перед вибухом
+CVAR_DURATION = Скільки секунд буде горіти молотов
+CVAR_DEMAGE_MODE = Хто отримує урон від коктейлю молотова (0 - лише противники, 1 - противники та гравець що кинув коктейль молотова, 2 - всі гравці)
+CVAR_DEMAGE_RADIUS_MODE = Як буде завдаватися урон від вогню (1 - через Ham_TakeDamage [урон фіксований в будь-якій точці радіусу горіння], 2 - через rg_dmg_radius [урон залежить від відстані до епіцентру горіння та наявності броні])
+CVAR_DEMAGE_TIME = Періодичність завдання урону
+CVAR_DEMAGE_VALUE = Кількість завданого урону за період (molotov_demage_time)
+CVAR_EFFECT_NUM = Кількість хвиль вогню що змальовуються
+CVAR_SMOKE_TOUCH = Тушити чи ні коктейль молотова димовою гранатою
+CVAR_SMOKE_OWNER = Шлях до моделі димової гранати. (Стандартна: models/w_smokegrenade.mdl)
+CVAR_WATER_TOUCH = Тушити чи ні коктейль молотова при зіткненні з водою
+CVAR_SKY_FORCE = Видаляти коктейль молотова при зіткненні зі скайбоксом карти
+NTF_VIP = Ви VIP. Ви не можете нічого купити
+NTF_WPN_NA = Молотов вам недоступний
+NTF_WPN_CANTBUY = Ви не можете купити Молотов
+NTF_WPN_CANTBUY_TIME = Час вийшов. Ви не можете купити Молотов
+NTF_ALREADY_HO = У вас вже є Молотов
+NTF_NOT_MONEY = У вас недостатньо грошей
+NTF_CARRY_ANY = Ви не можете взяти більше Молотовів
+MOLOTOV_BMRBS_NO_ACCESS = ^3* ^1У вас немає доступу до цього пункту меню!
+MOLOTOV_BMRBS_ONLY_ALIVE = ^3* ^1Доступно лише живим гравцям!
+MOLOTOV_BMRBS_ALREADY_HAVE = ^3* ^1У вас вже є коктейль молотова!
+MOLOTOV_BMRBS_MIN_ROUND = ^3* ^1Мінімальний раунд для покупки:^3 %i
+MOLOTOV_BMRBS_WAIT_MORE_ROUNDS = ^3* ^1Зачекайте ще^3 %i ^1%l
+MOLOTOV_BMRBS_WAIT_MORE_SECONDS = ^3* ^1Зачекайте ще^3 %02d:%02d
+MOLOTOV_BMRBS_ROUNDS_1 = раундів
+MOLOTOV_BMRBS_ROUNDS_2 = раунд
+MOLOTOV_BMRBS_ROUNDS_3 = раунди
+MOLOTOV_BMRBS_ONLY_BUYZONE = ^3* ^1Доступно лише в зоні закупки!
+MOLOTOV_BMRBS_NOT_ENOUGH_POINTS = ^3* ^1Вам не вистачає очок!
+
 [en]
 CVAR_ACCESS = Access flags - to purchase or issue molotovs (requires "abc" / empty string "" - purchase available to all)
 CVAR_EQUIP_ACCESS = How many grenades to give out at spawn.

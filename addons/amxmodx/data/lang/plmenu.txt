@@ -412,6 +412,25 @@ CL_CMD_MENU = Клиентское меню
 NO_CMDS = Нет доступных переменных
 CANT_PERF_PLAYER = Неприменимо к игроку "%s"
 
+[ua]
+ADMIN_BAN_1 = АДМІНІСТРАТОР: забанив %s
+ADMIN_BAN_2 = АДМІНІСТРАТОР %s: забанив %s
+BAN_MENU = Бан меню
+BAN_FOR_MIN = Бан на %d хвилин
+BAN_PERM = Бан назавжди
+SLAP_SLAY_MENU = Вдарити/Вбити
+SLAP_WITH_DMG = Вдарити на %d HP
+SLAY = Вбити
+KICK_MENU = Кік меню
+ADMIN_TRANSF_1 = АДМІНІСТРАТОР: перевів %s за %s
+ADMIN_TRANSF_2 = АДМІНІСТРАТОР %s: перевів %s за %s
+TEAM_MENU = Меню команди гравця
+TRANSF_TO = Перемістити за %s
+TRANSF_SILENT = Зміна команди без смерті
+CL_CMD_MENU = Клієнтське меню
+NO_CMDS = Немає доступних змінних
+CANT_PERF_PLAYER = Незастосовно до гравця "%s"
+
 [cn]
 ADMIN_BAN_1 = 管理员: 封禁 %s
 ADMIN_BAN_2 = 管理员 %s: 封禁 %s

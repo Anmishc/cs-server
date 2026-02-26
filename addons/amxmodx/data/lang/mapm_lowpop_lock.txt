@@ -5,3 +5,7 @@ MAPM_LOWPOP_SWITCH_NEXT = ^4#1FUP:^1 Less than ^3%d^1 players. Next round we wil
 [ru]
 MAPM_RTV_LOCKED = ^4#1FUP:^1 команда ^4/rtv^1 будет доступна при онлайне ^3%d^1 игроков. Сейчас: ^3%d^1.
 MAPM_LOWPOP_SWITCH_NEXT = ^4#1FUP:^1 на сервере меньше ^3%d^1 человек, в следующем раунде сменим карту на ^3%s^1.
+
+[ua]
+MAPM_RTV_LOCKED = ^4#1FUP:^1 команда ^4/rtv^1 буде доступна при онлайні ^3%d^1 гравців. Зараз: ^3%d^1.
+MAPM_LOWPOP_SWITCH_NEXT = ^4#1FUP:^1 на сервері менше ^3%d^1 гравців, у наступному раунді змінимо карту на ^3%s^1.

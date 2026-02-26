@@ -240,6 +240,17 @@ SET_LANG_USER = Ваш язык изменен на "%s"
 TYPE_LANGMENU = Напишите 'amx_langmenu' в консоле для выбора языка
 LANG_MENU_DISABLED = Меню выбора языка заблокировано.
 
+[ua]
+LANG_NOT_EXISTS = Така мова не існує
+PERSO_LANG = Персональна мова
+LANG_MENU = Меню вибору мови
+SERVER_LANG = Мова сервера
+SAVE_LANG = Зберегти мову
+SET_LANG_SERVER = Мову за замовчуванням змінено на "%s"
+SET_LANG_USER = Вашу мову змінено на "%s"
+TYPE_LANGMENU = Напишіть 'amx_langmenu' в консолі для вибору мови
+LANG_MENU_DISABLED = Меню вибору мови заблоковано.
+
 [cn]
 LANG_NOT_EXISTS = 该语言不存在
 PERSO_LANG = 个人语言
