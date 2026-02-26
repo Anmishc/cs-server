@@ -750,6 +750,61 @@ enum GamedllFunc_CBasePlayer
 };
 
 /**
+* GamedllFunc CBasePlayerWeapon
+*/
+enum GamedllFunc_CBasePlayerWeapon
+{
+	/*
+	* Description:      -
+	* Return type:      BOOL
+	* Params:           (const this)
+	*/
+	RG_CBasePlayerWeapon_CanDeploy = BEGIN_FUNC_REGION(weapon),
+
+	/*
+	* Description:      -
+	* Return type:      BOOL
+	* Params:           (const this, szViewModel[], szWeaponModel[], iAnim, szAnimExt[], skiplocal)
+	*/
+	RG_CBasePlayerWeapon_DefaultDeploy,
+
+	/*
+	* Description:      -
+	* Return type:      int
+	* Params:           (const this, iClipSize, iAnim, Float:fDelay)
+	*/
+	RG_CBasePlayerWeapon_DefaultReload,
+
+	/*
+	* Description:      -
+	* Return type:      bool
+	* Params:           (const this, iAnim, iStartAnim, Float:fDelay, Float:fStartDelay, const pszReloadSound1[], const pszReloadSound2[])
+	*/
+	RG_CBasePlayerWeapon_DefaultShotgunReload,
+
+	/*
+	* Description:      Called every client frame (PlayerPostThink) for the player's active weapon
+	* Return type:      void
+	* Params:           (const this)
+	*/
+	RG_CBasePlayerWeapon_ItemPostFrame,
+
+	/*
+	* Description:      Called whenever player fires a weapon and shakes player screen
+	* Return type:      void
+	* Params:           (const this, Float:up_base, Float:lateral_base, Float:up_modifier, Float:lateral_modifier, Float:p_max, Float:lateral_max, direction_change)
+	*/
+	RG_CBasePlayerWeapon_KickBack,
+
+	/*
+	* Description:      Called whenever game sends an animation to his current holder
+	* Return type:      void
+	* Params:           (const this, iAnim, skiplocal)
+	*/
+	RG_CBasePlayerWeapon_SendWeaponAnim,
+};
+
+/**
 * GamedllFunc CSGameRules
 */
 enum GamedllFunc_CSGameRules
@@ -5334,11 +5389,13 @@ enum CFamas_Members
 	* Set params:       set_member(index, member, value);
 	*/
 	m_Famas_iShellOn,
-};
 
-/**
-* CUSP Members
-*/
+	/*
+	* Description:      Basic damage that famas deals in burst mode
+	* Member type:      float
+	*/
+	m_Famas_flBaseDamageBurst,
+};
 enum CUSP_Members
 {
 	/*
@@ -5356,11 +5413,13 @@ enum CUSP_Members
 	* Set params:       set_member(index, member, value);
 	*/
 	m_USP_usFire,
-};
 
-/**
-* CGLOCK18 Members
-*/
+	/*
+	* Description:      Basic damage that usp deals in silenced mode
+	* Member type:      float
+	*/
+	m_USP_flBaseDamageSil,
+};
 enum CGLOCK18_Members
 {
 	/*
@@ -5514,6 +5573,12 @@ enum CM4A1_Members
 	* Set params:       set_member(index, member, value);
 	*/
 	m_M4A1_usFire,
+
+	/*
+	* Description:      Basic damage that m4a1 deals in silenced mode
+	* Member type:      float
+	*/
+	m_M4A1_flBaseDamageSil,
 };
 
 /**
@@ -5670,6 +5735,36 @@ enum CKnife_Members
 	* Set params:       set_member(index, member, value);
 	*/
 	m_Knife_usKnife,
+
+	/*
+	* Description:      Stab base damage (default: 65.0)
+	* Member type:      float
+	*/
+	m_Knife_flStabBaseDamage,
+
+	/*
+	* Description:      Swing base damage (default: 15.0)
+	* Member type:      float
+	*/
+	m_Knife_flSwingBaseDamage,
+
+	/*
+	* Description:      Fast swing (first) base damage (default: 20.0)
+	* Member type:      float
+	*/
+	m_Knife_flSwingBaseDamage_Fast,
+
+	/*
+	* Description:      Stab distance (default: 32.0)
+	* Member type:      float
+	*/
+	m_Knife_flStabDistance,
+
+	/*
+	* Description:      Swing distance (default: 64.0)
+	* Member type:      float
+	*/
+	m_Knife_flSwingDistance,
 };
 
 /**
@@ -5758,4 +5853,10 @@ enum CCSPlayerWeapon_Members
 	* Set params:       set_member(index, member, bool:value);
 	*/
 	m_Weapon_bHasSecondaryAttack = BEGIN_MEMBER_REGION(csplayerweapon),
+
+	/*
+	* Description:      Basic damage that weapon deals before any multiplier
+	* Member type:      float
+	*/
+	m_Weapon_flBaseDamage,
 };

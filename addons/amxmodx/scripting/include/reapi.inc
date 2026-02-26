@@ -22,7 +22,8 @@ enum hooks_tables_e
 	ht_gamerules,
 	ht_rechecker,
 	ht_grenade,
-	ht_weaponbox
+	ht_weaponbox,
+	ht_weapon
 };
 
 enum members_tables_e

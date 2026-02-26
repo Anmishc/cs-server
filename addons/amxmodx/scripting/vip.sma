@@ -269,7 +269,8 @@ public plugin_init()
 	// RegisterHookChain(RG_CBasePlayer_ResetMaxSpeed, "CBasePlayer_ResetMaxSpeed", true);
 	RegisterHookChain(RG_CBasePlayer_Killed, "CBasePlayer_Killed", true);
 	RegisterHookChain(RG_CBasePlayer_ThrowGrenade, "CBasePlayer_ThrowGrenade", true);
-	RegisterHookChain(RG_CBasePlayerWeapon_DefaultDeploy, "CBasePlayerWeapon_DefaultDeploy", false);
+	// RG_CBasePlayerWeapon_DefaultDeploy not supported in current ReAPI version
+	// RegisterHookChain(RG_CBasePlayerWeapon_DefaultDeploy, "CBasePlayerWeapon_DefaultDeploy", false);
 	RegisterHookChain(RG_CWeaponBox_SetModel, "CWeaponBox_SetModel", false);
 	
 	RegisterHam(Ham_Touch, "weaponbox", "CWeaponBox_Touch", false);

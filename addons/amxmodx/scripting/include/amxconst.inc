@@ -58,6 +58,8 @@ public stock const Float:NULL_VECTOR[3];
  * The maximum buffer size required to store a clients name.
  */
 #define MAX_NAME_LENGTH 32
+#define MAX_RESOURCE_PATH_LENGTH 64
+#define MAX_AUTHID_LENGTH 64
 
 /**
  * π
